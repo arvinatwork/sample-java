@@ -23,11 +23,10 @@ steps:
 # Run shell commands or a script on a remote machine using SSH
 - task: SSH@0
   inputs:
-    sshEndpoint: CDAASAsiaSampleVM
+    sshEndpoint: DevOpsToCDaaSAsiaPOC
     #runOptions: 'commands' # Options: commands, script, inline
     commands: ls
     #scriptPath: # Required when runOptions == Script
     #inline: # Required when runOptions == Inline
     #args: # Optional
     #failOnStdErr: # Optional
-    
