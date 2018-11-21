@@ -30,4 +30,8 @@ steps:
     #inline: # Required when runOptions == Inline
     #args: # Optional
     #failOnStdErr: # Optional
-    
+
+- task: SSH@0
+  inputs:
+    sshEndpoint: CDAASAsiaSampleVM
+    commands: mkdir -p testfolder
