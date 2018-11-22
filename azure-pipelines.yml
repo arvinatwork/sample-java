@@ -25,7 +25,7 @@ steps:
   inputs:
     sshEndpoint: CDAASAsiaSampleVM
     #runOptions: 'commands' # Options: commands, script, inline
-    commands: ls $(Agent.BuildDirectory)
+    commands: ls 
     #scriptPath: # Required when runOptions == Script
     #inline: # Required when runOptions == Inline
     #args: # Optional
