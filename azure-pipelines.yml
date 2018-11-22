@@ -25,7 +25,7 @@ steps:
   inputs:
     sshEndpoint: CDAASAsiaSampleVM
     #runOptions: 'commands' # Options: commands, script, inline
-    commands: ls
+    commands: ls $(Agent.BuildDirectory)
     #scriptPath: # Required when runOptions == Script
     #inline: # Required when runOptions == Inline
     #args: # Optional
@@ -35,3 +35,16 @@ steps:
   inputs:
     sshEndpoint: CDAASAsiaSampleVM
     commands: mkdir -p testfolder
+
+# Copy Files Over SSH
+# Copy files or build artifacts to a remote machine over SSH
+- task: CopyFilesOverSSH@0
+  inputs:
+    sshEndpoint: CDAASAsiaSampleVM
+    sourceFolder: $(Agent.BuildDirectory)
+    contents: '**/*.jar' 
+    targetFolder: ~/testfolder
+    #cleanTargetFolder: false # Optional
+    #overwrite: true # Optional
+    #failOnEmptySource: false # Optional
+    #flattenFolders: false # Optional
