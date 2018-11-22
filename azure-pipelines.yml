@@ -19,10 +19,6 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
 
-- task: Bash@3
-  inputs:
-    script: ls $(Agent.BuildDirectory)
-
 # SSH
 # Run shell commands or a script on a remote machine using SSH
 - task: SSH@0
@@ -45,7 +41,7 @@ steps:
 - task: CopyFilesOverSSH@0
   inputs:
     sshEndpoint: CDAASAsiaSampleVM
-    sourceFolder: $(Agent.BuildDirectory)
+    sourceFolder: $(Agent.BuildDirectory)/build/libs/
     contents: '**/*.jar' 
     targetFolder: ~/testfolder
     #cleanTargetFolder: false # Optional
