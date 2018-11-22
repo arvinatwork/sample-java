@@ -19,6 +19,10 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
 
+- task: Bash@3
+  inputs:
+    script: ls $(Agent.BuildDirectory)
+
 # SSH
 # Run shell commands or a script on a remote machine using SSH
 - task: SSH@0
