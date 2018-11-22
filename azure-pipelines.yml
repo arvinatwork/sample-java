@@ -41,7 +41,7 @@ steps:
 - task: CopyFilesOverSSH@0
   inputs:
     sshEndpoint: CDAASAsiaSampleVM
-    sourceFolder: $(Agent.BuildDirectory)/build/libs/
+    sourceFolder: $(Agent.BuildDirectory)/s/build/libs/
     contents: '**/*.jar' 
     targetFolder: ~/testfolder
     #cleanTargetFolder: false # Optional
